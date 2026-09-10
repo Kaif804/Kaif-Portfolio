@@ -1,0 +1,205 @@
+import React, { useState, useEffect } from 'react';
+import { Menu, X, ArrowUpRight, Code2, Download } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolioData';
+
+interface NavbarProps {
+  onOpenCv: () => void;
+  onOpenContact: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+      const sections = ['home', 'about', 'services', 'portfolio', 'experience', 'testimonials', 'contact'];
+      const scrollPosition = window.scrollY + 120;
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <header
+      id="main-navbar"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-[#09090b]/90 backdrop-blur-md border-b border-[#222228] py-3.5 shadow-2xl shadow-black/40'
+          : 'bg-transparent py-5'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <a
+            href="#home"
+            id="nav-logo"
+            className="flex items-center gap-3 group focus:outline-none"
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#ff5733] to-[#ff7e5f] flex items-center justify-center font-bold text-white shadow-lg shadow-[#ff5733]/25 group-hover:scale-105 transition-transform duration-200">
+              <span className="font-mono text-sm tracking-wider">KQ</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-[#ff6b35] transition-colors">
+                Kaif Qaiser
+              </span>
+              <span className="text-[11px] font-medium text-zinc-400 -mt-1 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                WordPress Developer
+              </span>
+            </div>
+          </a>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-1 bg-[#121215]/80 border border-[#222228] rounded-full px-4 py-1.5 backdrop-blur-sm">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace('#', '');
+              return (
+                <button
+                  key={link.label}
+                  id={`nav-link-${link.label.toLowerCase()}`}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                    isActive
+                      ? 'bg-[#ff5733] text-white shadow-md shadow-[#ff5733]/20 font-semibold'
+                      : 'text-zinc-300 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {link.label}
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Right Action CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              id="nav-cv-btn"
+              onClick={onOpenCv}
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-zinc-300 hover:text-white border border-[#2a2a30] hover:border-[#ff5733]/40 rounded-xl bg-[#141418] transition-all duration-200"
+            >
+              <Download className="w-3.5 h-3.5 text-[#ff5733]" />
+              <span>CV</span>
+            </button>
+
+            <button
+              id="nav-hire-me-btn"
+              onClick={() => {
+                onOpenContact();
+                handleNavClick('#contact');
+              }}
+              className="relative group inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold text-white bg-[#ff5733] hover:bg-[#ff6b35] rounded-xl shadow-lg shadow-[#ff5733]/25 hover:shadow-[#ff5733]/40 transition-all duration-200"
+            >
+              <span>Hire Me</span>
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              id="mobile-hire-me-btn"
+              onClick={() => handleNavClick('#contact')}
+              className="px-3 py-1.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
+            >
+              Hire Me
+            </button>
+            <button
+              id="mobile-menu-toggle"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-zinc-400 hover:text-white bg-[#141418] border border-[#222228] rounded-lg"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div
+          id="mobile-nav-drawer"
+          className="md:hidden border-b border-[#222228] bg-[#0c0c0e] px-4 pt-3 pb-6 shadow-2xl space-y-3"
+        >
+          <div className="grid grid-cols-2 gap-2">
+            {navLinks.map((link) => (
+              <button
+                key={link.label}
+                id={`mobile-link-${link.label.toLowerCase()}`}
+                onClick={() => handleNavClick(link.href)}
+                className={`text-left px-3 py-2 text-sm rounded-lg transition-colors ${
+                  activeSection === link.href.replace('#', '')
+                    ? 'bg-[#ff5733]/15 text-[#ff6b35] font-semibold border border-[#ff5733]/30'
+                    : 'text-zinc-300 hover:bg-[#141418]'
+                }`}
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="pt-2 border-t border-[#1e1e24] flex gap-2">
+            <button
+              id="mobile-drawer-cv-btn"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenCv();
+              }}
+              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-medium text-zinc-200 bg-[#15151a] border border-[#282830] rounded-lg"
+            >
+              <Download className="w-3.5 h-3.5 text-[#ff5733]" />
+              <span>View Resume</span>
+            </button>
+            <button
+              id="mobile-drawer-hire-btn"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                handleNavClick('#contact');
+              }}
+              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
+            >
+              <span>Get in Touch</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
