@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { MediaProvider } from './context/MediaContext';
-import { MediaUploadModal } from './components/MediaUploadModal';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsBar } from './components/StatsBar';
@@ -86,9 +85,6 @@ export function App() {
           isOpen={cvModalOpen}
           onClose={() => setCvModalOpen(false)}
         />
-
-        {/* Real Photo & Logo Uploader Modal */}
-        <MediaUploadModal />
       </div>
     </MediaProvider>
   );

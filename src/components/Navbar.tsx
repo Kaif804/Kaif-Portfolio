@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Code2, Download, ImageIcon } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Code2, Download } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { BrandLogo } from './BrandLogo';
-import { useMedia } from '../context/MediaContext';
 
 interface NavbarProps {
   onOpenCv: () => void;
@@ -10,7 +9,6 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
-  const { openMediaModal } = useMedia();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -101,17 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
           </nav>
 
           {/* Right Action CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-2.5">
-            <button
-              id="nav-media-btn"
-              onClick={openMediaModal}
-              title="Upload your genuine WhatsApp photo & logo"
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-zinc-300 hover:text-white border border-[#2a2a30] hover:border-[#ff5733]/40 rounded-xl bg-[#141418] transition-all duration-200"
-            >
-              <ImageIcon className="w-3.5 h-3.5 text-[#ff5733]" />
-              <span className="hidden xl:inline">Photo &amp; Logo</span>
-            </button>
-
+          <div className="hidden lg:flex items-center gap-3">
             <button
               id="nav-cv-btn"
               onClick={onOpenCv}
@@ -178,41 +166,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
             ))}
           </div>
 
-          <div className="pt-2 border-t border-[#1e1e24] flex flex-col gap-2">
-            <div className="flex gap-2">
-              <button
-                id="mobile-drawer-cv-btn"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenCv();
-                }}
-                className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-medium text-zinc-200 bg-[#15151a] border border-[#282830] rounded-lg"
-              >
-                <Download className="w-3.5 h-3.5 text-[#ff5733]" />
-                <span>View Resume</span>
-              </button>
-              <button
-                id="mobile-drawer-hire-btn"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleNavClick('#contact');
-                }}
-                className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
-              >
-                <span>Get in Touch</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
+          <div className="pt-2 border-t border-[#1e1e24] flex gap-2">
             <button
-              id="mobile-drawer-media-btn"
+              id="mobile-drawer-cv-btn"
               onClick={() => {
                 setMobileMenuOpen(false);
-                openMediaModal();
+                onOpenCv();
               }}
-              className="w-full inline-flex justify-center items-center gap-2 py-2 text-xs font-medium text-zinc-300 bg-[#15151a] border border-[#282830] rounded-lg hover:border-[#ff5733]/40"
+              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-medium text-zinc-200 bg-[#15151a] border border-[#282830] rounded-lg"
             >
-              <ImageIcon className="w-3.5 h-3.5 text-[#ff5733]" />
-              <span>Upload Real Photo &amp; Logo</span>
+              <Download className="w-3.5 h-3.5 text-[#ff5733]" />
+              <span>View Resume</span>
+            </button>
+            <button
+              id="mobile-drawer-hire-btn"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                handleNavClick('#contact');
+              }}
+              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
+            >
+              <span>Get in Touch</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
