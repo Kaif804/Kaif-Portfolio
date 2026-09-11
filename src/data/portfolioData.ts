@@ -113,11 +113,11 @@ export const SERVICES: Service[] = [
     description: 'High-converting online eCommerce stores equipped with modern checkout flows, inventory syncing, and secure payment processing.',
     deliverables: [
       'Custom product catalog, single product templates, and Ajax search',
-      'Multi-gateway payment integrations (Stripe, PayPal, COD)',
+      'Multi-gateway payment integrations (Credit Cards, PayPal, COD)',
       'Frictionless multi-step or single-page checkout configuration',
       'Automated email notifications, shipping rules, and tax setups'
     ],
-    techStack: ['WooCommerce', 'Stripe', 'Elementor Pro', 'PHP']
+    techStack: ['WooCommerce', 'Payment Gateways', 'Elementor Pro', 'PHP']
   },
   {
     id: 'elementor-pro',
@@ -153,10 +153,10 @@ export const SERVICES: Service[] = [
     deliverables: [
       'Asset minification, script deferral, and critical CSS inline delivery',
       'Next-gen WebP image conversion, lazy-loading, and CDN integration',
-      'Server-side & object caching (Redis/Memcached/WP Rocket)',
+      'Server-side & object caching (Redis, Memcached, Cache Rules)',
       'Database cleanup, transient clearing, and DOM node reduction'
     ],
-    techStack: ['Core Web Vitals', 'WP Rocket', 'Litespeed', 'Cloudflare']
+    techStack: ['Core Web Vitals', 'Cache Optimization', 'Litespeed', 'Cloudflare']
   },
   {
     id: 'security-maintenance',
@@ -229,20 +229,20 @@ export const PROJECTS: Project[] = [
     category: 'ecommerce',
     categoryLabel: 'WooCommerce Store',
     subtitle: 'Luxury Apparel & Accessories Store with Seamless Checkout',
-    description: 'Comprehensive WooCommerce build for a contemporary luxury brand. Engineered with instant Ajax mini-cart, live attribute filtering, Stripe payment gateway, and tailored transactional order emails.',
+    description: 'Comprehensive WooCommerce build for a contemporary luxury brand. Engineered with instant Ajax mini-cart, live attribute filtering, secure online checkout, and tailored transactional order emails.',
     image: ecommerceImg,
-    tags: ['WordPress', 'WooCommerce', 'Elementor Pro', 'Stripe Gateway', 'Speed 96+'],
+    tags: ['WordPress', 'WooCommerce', 'Elementor Pro', 'Payment Integration', 'Speed 96+'],
     liveUrl: 'https://zaxflix.com/',
     featured: true,
     metrics: [
       { label: 'Checkout Speed', value: '< 2.1s' },
       { label: 'Conversion Lift', value: '+34%' },
-      { label: 'Gateways', value: 'Stripe + ApplePay' }
+      { label: 'Gateways', value: 'Card + ApplePay' }
     ],
     deliverables: [
       'Custom WooCommerce product archive with dynamic variation swatches',
       'Ajax sliding side-cart and one-click coupon checkout',
-      'Stripe & PayPal secure multi-currency payment integration',
+      'Secure multi-currency online payment gateway integration',
       'Core Web Vitals tuning reaching 95+ score on mobile'
     ]
   },
@@ -368,7 +368,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Sarah Jenkins',
     role: 'E-commerce Brand Owner',
     company: 'Verve Essentials',
-    content: 'From checkout optimization to instant cart loading and Stripe setup, Kaif handled our store redesign seamlessly. Sales conversions jumped by over 30% within the first month. He continues to manage our site updates and security without a hiccup.',
+    content: 'From checkout optimization to instant cart loading and payment gateway setup, Kaif handled our store redesign seamlessly. Sales conversions jumped by over 30% within the first month. He continues to manage our site updates and security without a hiccup.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
     projectType: 'Store Redesign & Speed'

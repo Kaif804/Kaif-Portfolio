@@ -13,8 +13,7 @@ export const StatsBar: React.FC = () => {
     'ACF Pro',
     'PHP 8+',
     'MySQL',
-    'WP Rocket',
-    'Stripe Gateway'
+    'Payment Gateways'
   ];
 
   return (
