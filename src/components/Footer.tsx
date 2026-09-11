@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center">
-              <BrandLogo size="md" />
+              <BrandLogo size="lg" height={54} />
             </div>
 
             <p className="text-zinc-400 text-xs leading-relaxed max-w-sm">

@@ -60,8 +60,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#09090b]/90 backdrop-blur-md border-b border-[#222228] py-3.5 shadow-2xl shadow-black/40'
-          : 'bg-transparent py-5'
+          ? 'bg-[#09090b]/95 backdrop-blur-md border-b border-[#222228] py-2.5 shadow-2xl shadow-black/50'
+          : 'bg-transparent py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,11 +70,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
           <a
             href="#home"
             id="nav-logo"
-            className="flex items-center group focus:outline-none transition-transform hover:scale-[1.02]"
+            className="flex items-center group focus:outline-none transition-transform hover:scale-[1.03]"
             aria-label="Kaif Qaiser - WordPress Developer"
           >
-            <BrandLogo size="md" className="hidden sm:inline-flex" />
-            <BrandLogo size="sm" className="sm:hidden" />
+            <BrandLogo size="xl" height={scrolled ? 52 : 62} className="hidden sm:inline-flex" />
+            <BrandLogo size="md" height={42} className="sm:hidden" />
           </a>
 
           {/* Desktop Navigation Links */}

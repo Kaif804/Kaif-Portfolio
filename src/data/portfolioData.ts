@@ -1,7 +1,7 @@
 import { Project, Service, Experience, Testimonial, SkillCategory } from '../types';
 
 import kaifPortrait from '../assets/images/kaif_portrait_real.jpeg';
-import kaifLogo from '../assets/images/kaif_logo_real.jpeg';
+import kaifLogo from '../assets/images/kaif_logo_real_trimmed.png';
 import zaxflixImg from '../assets/images/zaxflix_preview_1789027877062.jpg';
 import ecommerceImg from '../assets/images/ecommerce_preview_1789027902254.jpg';
 import realestateImg from '../assets/images/realestate_preview_1789027917531.jpg';

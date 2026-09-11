@@ -18,7 +18,7 @@ interface MediaContextType {
 const MediaContext = createContext<MediaContextType | undefined>(undefined);
 
 const PROFILE_PHOTO_STORAGE_KEY = 'kaif_custom_profile_photo_v3';
-const BRAND_LOGO_STORAGE_KEY = 'kaif_custom_brand_logo_v3';
+const BRAND_LOGO_STORAGE_KEY = 'kaif_custom_brand_logo_v4';
 
 export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [profilePhoto, setProfilePhoto] = useState<string>(() => {

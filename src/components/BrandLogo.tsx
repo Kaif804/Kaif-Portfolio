@@ -3,7 +3,8 @@ import { useMedia } from '../context/MediaContext';
 
 interface BrandLogoProps {
   variant?: 'full' | 'icon-only' | 'horizontal';
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  height?: number;
   className?: string;
   forceSvg?: boolean;
 }
@@ -11,18 +12,22 @@ interface BrandLogoProps {
 export const BrandLogo: React.FC<BrandLogoProps> = ({
   variant = 'full',
   size = 'md',
+  height,
   className = '',
   forceSvg = false,
 }) => {
   const { logoImage } = useMedia();
 
-  // Dimension mappings
+  // Dimension mappings (significantly enlarged for clear brand visibility)
   const dimensions = {
-    sm: { height: 34, scale: 0.75 },
-    md: { height: 44, scale: 1.0 },
-    lg: { height: 54, scale: 1.2 },
-    xl: { height: 68, scale: 1.5 },
+    sm: { height: 38, scale: 0.8 },
+    md: { height: 50, scale: 1.05 },
+    lg: { height: 62, scale: 1.3 },
+    xl: { height: 74, scale: 1.55 },
+    '2xl': { height: 88, scale: 1.85 },
   }[size];
+
+  const targetHeight = height ?? dimensions.height;
 
   // If a real logo image has been provided and we're not forcing SVG, display the user's exact file!
   if (logoImage && !forceSvg) {
@@ -31,8 +36,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         <img
           src={logoImage}
           alt="Kaif Qaiser - WordPress Developer"
-          style={{ height: `${dimensions.height}px`, width: 'auto' }}
-          className="object-contain max-w-full"
+          style={{ height: `${targetHeight}px`, width: 'auto' }}
+          className="object-contain max-w-full drop-shadow-md transition-all duration-200"
         />
       </div>
     );
