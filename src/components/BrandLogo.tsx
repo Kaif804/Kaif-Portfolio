@@ -6,6 +6,7 @@ interface BrandLogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   height?: number;
   className?: string;
+  imgClassName?: string;
   forceSvg?: boolean;
 }
 
@@ -14,6 +15,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   size = 'md',
   height,
   className = '',
+  imgClassName = '',
   forceSvg = false,
 }) => {
   const { logoImage } = useMedia();
@@ -36,8 +38,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         <img
           src={logoImage}
           alt="Kaif Qaiser - WordPress Developer"
-          style={{ height: `${targetHeight}px`, width: 'auto' }}
-          className="object-contain max-w-full drop-shadow-md transition-all duration-200"
+          style={imgClassName && !height ? undefined : { height: `${targetHeight}px`, width: 'auto' }}
+          className={`object-contain max-w-full drop-shadow-md transition-all duration-200 ${imgClassName || 'w-auto'}`}
         />
       </div>
     );

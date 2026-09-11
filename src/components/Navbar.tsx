@@ -73,8 +73,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
             className="flex items-center group focus:outline-none transition-transform hover:scale-[1.03]"
             aria-label="Kaif Qaiser - WordPress Developer"
           >
-            <BrandLogo size="xl" height={scrolled ? 52 : 62} className="hidden sm:inline-flex" />
-            <BrandLogo size="md" height={42} className="sm:hidden" />
+            <BrandLogo
+              size="xl"
+              imgClassName={scrolled ? "h-9 sm:h-12 md:h-[52px]" : "h-10 sm:h-13 md:h-[60px]"}
+            />
           </a>
 
           {/* Desktop Navigation Links */}
