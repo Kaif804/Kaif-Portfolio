@@ -9,7 +9,7 @@ export const StatsBar: React.FC = () => {
     'WordPress Core',
     'Elementor Pro',
     'WooCommerce',
-    'JetEngine (Crocoblock)',
+    'JetEngine',
     'ACF Pro',
     'PHP 8+',
     'MySQL',

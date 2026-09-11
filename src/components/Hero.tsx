@@ -162,7 +162,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
                 </div>
               </div>
 
-              {/* Floating Badge 2: Bottom Right - Crocoblock & JetEngine */}
+              {/* Floating Badge 2: Bottom Right - JetEngine & ACF */}
               <div className="absolute -bottom-4 -right-4 sm:-right-6 px-3.5 py-2 rounded-xl bg-[#141419]/95 border border-[#2c2c36] shadow-xl backdrop-blur-md flex items-center gap-2.5">
                 <div className="w-7 h-7 rounded-lg bg-[#ff5733]/20 flex items-center justify-center text-[#ff5733]">
                   <Code2 className="w-4 h-4" />

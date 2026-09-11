@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-zinc-400 text-xs leading-relaxed max-w-sm">
-              Professional WordPress & WooCommerce Developer with 3 years of experience based in Lahore, Pakistan. Specializing in Elementor Pro, Crocoblock JetEngine, ACF, and Google Core Web Vitals speed optimization.
+              Professional WordPress & WooCommerce Developer with 3 years of experience based in Lahore, Pakistan. Specializing in Elementor Pro, JetEngine, ACF, and Google Core Web Vitals speed optimization.
             </p>
 
             <div className="flex items-center gap-3 pt-2">

@@ -143,7 +143,7 @@ export const SERVICES: Service[] = [
       'Faceted real-time search & filters with JetSmartFilters',
       'User dashboard, front-end submission forms, and relations'
     ],
-    techStack: ['JetEngine', 'ACF Pro', 'Crocoblock', 'Custom Queries']
+    techStack: ['JetEngine', 'ACF Pro', 'Custom Post Types', 'Custom Queries']
   },
   {
     id: 'speed-optimization',
@@ -252,9 +252,9 @@ export const PROJECTS: Project[] = [
     category: 'dynamic',
     categoryLabel: 'Dynamic Directory',
     subtitle: 'Real Estate & Rental Portal with JetEngine & ACF',
-    description: 'Dynamic property listing portal built with Crocoblock JetEngine and ACF Pro. Includes custom post types for properties, agent profiles, interactive map filtering, and automated inquiry distribution.',
+    description: 'Dynamic property listing portal built with JetEngine and ACF Pro. Includes custom post types for properties, agent profiles, interactive map filtering, and automated inquiry distribution.',
     image: realestateImg,
-    tags: ['JetEngine', 'ACF Pro', 'Crocoblock', 'Custom Queries', 'Google Maps API'],
+    tags: ['JetEngine', 'ACF Pro', 'Custom Post Types', 'Custom Queries', 'Google Maps API'],
     liveUrl: 'https://zaxflix.com/',
     featured: true,
     metrics: [
@@ -281,7 +281,7 @@ export const EXPERIENCES: Experience[] = [
     current: true,
     highlights: [
       'Develop responsive and high-performance WordPress websites for international and domestic clients.',
-      'Build dynamic, data-driven web solutions leveraging Elementor Pro, Advanced Custom Fields (ACF), and Crocoblock JetEngine.',
+      'Build dynamic, data-driven web solutions leveraging Elementor Pro, Advanced Custom Fields (ACF), and JetEngine.',
       'Customize WordPress themes and plugins from scratch according to strict client technical requirements.',
       'Develop robust WooCommerce stores with end-to-end payment gateway integrations, shipping rules, and tax configurations.',
       'Optimize website speed and Google Core Web Vitals to consistently achieve 90+ performance scores.',
@@ -358,7 +358,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'David Reynolds',
     role: 'Product Lead',
     company: 'Digital Horizon US',
-    content: 'We contracted Kaif for a multi-faceted directory project requiring custom JetEngine post relations and ACF fields. His technical grasp of Crocoblock and custom queries is exceptional. Delivered before the deadline with flawless communication.',
+    content: 'We contracted Kaif for a multi-faceted directory project requiring custom JetEngine post relations and ACF fields. His technical grasp of JetEngine and custom queries is exceptional. Delivered before the deadline with flawless communication.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
     projectType: 'JetEngine & ACF Portal'
