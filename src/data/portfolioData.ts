@@ -1,6 +1,7 @@
 import { Project, Service, Experience, Testimonial, SkillCategory } from '../types';
 
-import kaifPortrait from '../assets/images/kaif_portrait_new_1789105064684.jpg';
+import kaifPortrait from '../assets/images/kaif_portrait_real.jpeg';
+import kaifLogo from '../assets/images/kaif_logo_real.jpeg';
 import zaxflixImg from '../assets/images/zaxflix_preview_1789027877062.jpg';
 import ecommerceImg from '../assets/images/ecommerce_preview_1789027902254.jpg';
 import realestateImg from '../assets/images/realestate_preview_1789027917531.jpg';
@@ -16,6 +17,7 @@ export const PERSONAL_INFO = {
   email: 'mrk371169@gmail.com',
   linkedin: 'https://www.linkedin.com/in/kaif-qaiser-105264326/',
   avatar: kaifPortrait,
+  logo: kaifLogo,
   headline: 'WordPress Developer Who Builds Fast, Beautiful & Scalable Websites',
   subheadline: '3 Years of Professional Experience | Elementor Pro | WooCommerce | JetEngine | ACF',
   bio: 'Specialized WordPress Developer based in Lahore, Pakistan with 3 years of hands-on experience architecting high-performance WooCommerce stores, custom Elementor Pro pages, and complex dynamic platforms using JetEngine and ACF. Passionate about pixel-perfect responsive layouts, lightning-fast Core Web Vitals, and bulletproof security.',
@@ -35,7 +37,7 @@ export const SKILLS_LIST = [
   'WooCommerce',
   'Elementor Pro',
   'Divi Builder',
-  'JetEngine (Crocoblock)',
+  'JetEngine',
   'ACF (Advanced Custom Fields)',
   'PHP',
   'JavaScript',
@@ -55,7 +57,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'Elementor Pro & Theme Builder', level: 96, featured: true },
       { name: 'WooCommerce & Checkout UX', level: 94, featured: true },
       { name: 'Divi Builder', level: 88 },
-      { name: 'wp-ocean & Hello Elementor', level: 95 }
+      { name: 'Ocean WP & Hello Elementor', level: 95 }
     ]
   },
   {

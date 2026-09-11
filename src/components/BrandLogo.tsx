@@ -18,10 +18,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 
   // Dimension mappings
   const dimensions = {
-    sm: { height: 28, scale: 0.7 },
-    md: { height: 36, scale: 0.9 },
-    lg: { height: 44, scale: 1.1 },
-    xl: { height: 56, scale: 1.4 },
+    sm: { height: 34, scale: 0.75 },
+    md: { height: 44, scale: 1.0 },
+    lg: { height: 54, scale: 1.2 },
+    xl: { height: 68, scale: 1.5 },
   }[size];
 
   // If a real logo image has been provided and we're not forcing SVG, display the user's exact file!

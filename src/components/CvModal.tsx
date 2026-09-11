@@ -76,22 +76,29 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
               </p>
             </div>
 
-            <div className="space-y-1.5 text-xs text-zinc-300 print:text-gray-800 shrink-0 bg-[#16161d] p-4 rounded-xl border border-[#252530] print:bg-gray-50 print:border-gray-200">
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#ff5733]" />
-                <a href={`tel:${PERSONAL_INFO.phone}`} className="hover:underline">{PERSONAL_INFO.displayPhone}</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#ff5733]" />
-                <a href={`mailto:${PERSONAL_INFO.email}`} className="hover:underline">{PERSONAL_INFO.email}</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#ff5733]" />
-                <span>{PERSONAL_INFO.location}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Linkedin className="w-3.5 h-3.5 text-[#ff5733]" />
-                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="text-[#ff6b35] hover:underline">LinkedIn Profile</a>
+            <div className="flex items-center gap-4 shrink-0">
+              <img
+                src={PERSONAL_INFO.avatar}
+                alt={PERSONAL_INFO.name}
+                className="w-24 h-28 rounded-xl object-cover object-top border border-[#2d2d38] print:border-gray-300 shadow-md"
+              />
+              <div className="space-y-1.5 text-xs text-zinc-300 print:text-gray-800 shrink-0 bg-[#16161d] p-4 rounded-xl border border-[#252530] print:bg-gray-50 print:border-gray-200">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-[#ff5733]" />
+                  <a href={`tel:${PERSONAL_INFO.phone}`} className="hover:underline">{PERSONAL_INFO.displayPhone}</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-[#ff5733]" />
+                  <a href={`mailto:${PERSONAL_INFO.email}`} className="hover:underline">{PERSONAL_INFO.email}</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#ff5733]" />
+                  <span>{PERSONAL_INFO.location}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Linkedin className="w-3.5 h-3.5 text-[#ff5733]" />
+                  <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="text-[#ff6b35] hover:underline">LinkedIn Profile</a>
+                </div>
               </div>
             </div>
           </div>

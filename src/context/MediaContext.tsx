@@ -17,8 +17,8 @@ interface MediaContextType {
 
 const MediaContext = createContext<MediaContextType | undefined>(undefined);
 
-const PROFILE_PHOTO_STORAGE_KEY = 'kaif_custom_profile_photo_v2';
-const BRAND_LOGO_STORAGE_KEY = 'kaif_custom_brand_logo_v2';
+const PROFILE_PHOTO_STORAGE_KEY = 'kaif_custom_profile_photo_v3';
+const BRAND_LOGO_STORAGE_KEY = 'kaif_custom_brand_logo_v3';
 
 export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [profilePhoto, setProfilePhoto] = useState<string>(() => {
@@ -33,11 +33,12 @@ export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const [logoImage, setLogoImage] = useState<string | null>(() => {
     try {
-      return localStorage.getItem(BRAND_LOGO_STORAGE_KEY) || null;
+      const saved = localStorage.getItem(BRAND_LOGO_STORAGE_KEY);
+      if (saved) return saved;
     } catch (e) {
       console.warn('Could not load logo from storage', e);
-      return null;
     }
+    return PERSONAL_INFO.logo;
   });
 
   const [isMediaModalOpen, setIsMediaModalOpen] = useState<boolean>(false);
@@ -107,7 +108,7 @@ export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const resetLogo = () => {
-    setLogoImage(null);
+    setLogoImage(PERSONAL_INFO.logo);
     try {
       localStorage.removeItem(BRAND_LOGO_STORAGE_KEY);
     } catch (_) {}
@@ -117,7 +118,7 @@ export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const closeMediaModal = () => setIsMediaModalOpen(false);
 
   const isCustomPhoto = profilePhoto !== PERSONAL_INFO.avatar;
-  const isCustomLogo = logoImage !== null;
+  const isCustomLogo = logoImage !== PERSONAL_INFO.logo;
 
   return (
     <MediaContext.Provider
