@@ -1,6 +1,7 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { ArrowUp, Heart, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -25,13 +26,8 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#ff5733] to-[#ff7e5f] flex items-center justify-center font-bold text-white shadow-lg shadow-[#ff5733]/25">
-                <span className="font-mono text-xs tracking-wider">KQ</span>
-              </div>
-              <span className="font-bold text-lg text-white tracking-tight">
-                Kaif Qaiser
-              </span>
+            <div className="flex items-center">
+              <BrandLogo size="md" />
             </div>
 
             <p className="text-zinc-400 text-xs leading-relaxed max-w-sm">

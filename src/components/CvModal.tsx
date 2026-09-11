@@ -1,6 +1,7 @@
 import React from 'react';
 import { PERSONAL_INFO, EXPERIENCES, EDUCATION, SKILLS_LIST } from '../data/portfolioData';
 import { X, Printer, Download, Mail, Phone, MapPin, Linkedin, ExternalLink, Award, CheckCircle } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 
 interface CvModalProps {
   isOpen: boolean;
@@ -60,7 +61,10 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
           
           {/* Resume Header */}
           <div className="pb-6 border-b border-[#22222d] print:border-gray-300 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-            <div>
+            <div className="space-y-3">
+              <div className="print:hidden">
+                <BrandLogo size="md" />
+              </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight print:text-black">
                 {PERSONAL_INFO.name}
               </h1>

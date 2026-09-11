@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { MediaProvider } from './context/MediaContext';
+import { MediaUploadModal } from './components/MediaUploadModal';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsBar } from './components/StatsBar';
@@ -38,52 +40,57 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-[#f4f4f5] flex flex-col relative selection:bg-[#ff5733]/30 selection:text-[#ff6b35]">
-      {/* Top Fixed Navbar */}
-      <Navbar
-        onOpenCv={() => setCvModalOpen(true)}
-        onOpenContact={handleOpenContact}
-      />
-
-      {/* Main Page Sections in exact order */}
-      <main className="flex-1">
-        {/* 1. Hero Section */}
-        <Hero
+    <MediaProvider>
+      <div className="min-h-screen bg-[#09090b] text-[#f4f4f5] flex flex-col relative selection:bg-[#ff5733]/30 selection:text-[#ff6b35]">
+        {/* Top Fixed Navbar */}
+        <Navbar
           onOpenCv={() => setCvModalOpen(true)}
-          onOpenPortfolio={handleOpenPortfolio}
+          onOpenContact={handleOpenContact}
         />
 
-        {/* 2. Stats Bar & Tech Trust */}
-        <StatsBar />
+        {/* Main Page Sections in exact order */}
+        <main className="flex-1">
+          {/* 1. Hero Section */}
+          <Hero
+            onOpenCv={() => setCvModalOpen(true)}
+            onOpenPortfolio={handleOpenPortfolio}
+          />
 
-        {/* 3. About & Skills Section */}
-        <AboutSection />
+          {/* 2. Stats Bar & Tech Trust */}
+          <StatsBar />
 
-        {/* 4. Services Section (Accordion & Card Switcher) */}
-        <ServicesSection onSelectService={handleSelectService} />
+          {/* 3. About & Skills Section */}
+          <AboutSection />
 
-        {/* 5. Featured Portfolio Section (Zaxflix & More) */}
-        <PortfolioSection />
+          {/* 4. Services Section (Accordion & Card Switcher) */}
+          <ServicesSection onSelectService={handleSelectService} />
 
-        {/* 6. Work Experience Timeline & Credentials */}
-        <ExperienceSection />
+          {/* 5. Featured Portfolio Section (Zaxflix & More) */}
+          <PortfolioSection />
 
-        {/* 7. Client Testimonials */}
-        <TestimonialsSection />
+          {/* 6. Work Experience Timeline & Credentials */}
+          <ExperienceSection />
 
-        {/* 8. Contact & Quote Request Section */}
-        <ContactSection preselectedService={selectedServiceForQuote} />
-      </main>
+          {/* 7. Client Testimonials */}
+          <TestimonialsSection />
 
-      {/* Footer */}
-      <Footer />
+          {/* 8. Contact & Quote Request Section */}
+          <ContactSection preselectedService={selectedServiceForQuote} />
+        </main>
 
-      {/* Printable / Viewable Digital CV Modal */}
-      <CvModal
-        isOpen={cvModalOpen}
-        onClose={() => setCvModalOpen(false)}
-      />
-    </div>
+        {/* Footer */}
+        <Footer />
+
+        {/* Printable / Viewable Digital CV Modal */}
+        <CvModal
+          isOpen={cvModalOpen}
+          onClose={() => setCvModalOpen(false)}
+        />
+
+        {/* Real Photo & Logo Uploader Modal */}
+        <MediaUploadModal />
+      </div>
+    </MediaProvider>
   );
 }
 

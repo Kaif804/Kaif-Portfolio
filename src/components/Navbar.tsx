@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Code2, Download } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Code2, Download, ImageIcon } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { BrandLogo } from './BrandLogo';
+import { useMedia } from '../context/MediaContext';
 
 interface NavbarProps {
   onOpenCv: () => void;
@@ -8,6 +10,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
+  const { openMediaModal } = useMedia();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -65,24 +68,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Official Brand Logo */}
           <a
             href="#home"
             id="nav-logo"
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center group focus:outline-none transition-transform hover:scale-[1.02]"
+            aria-label="Kaif Qaiser - WordPress Developer"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#ff5733] to-[#ff7e5f] flex items-center justify-center font-bold text-white shadow-lg shadow-[#ff5733]/25 group-hover:scale-105 transition-transform duration-200">
-              <span className="font-mono text-sm tracking-wider">KQ</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-[#ff6b35] transition-colors">
-                Kaif Qaiser
-              </span>
-              <span className="text-[11px] font-medium text-zinc-400 -mt-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                WordPress Developer
-              </span>
-            </div>
+            <BrandLogo size="md" className="hidden sm:inline-flex" />
+            <BrandLogo size="sm" className="sm:hidden" />
           </a>
 
           {/* Desktop Navigation Links */}
@@ -107,7 +101,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
           </nav>
 
           {/* Right Action CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5">
+            <button
+              id="nav-media-btn"
+              onClick={openMediaModal}
+              title="Upload your genuine WhatsApp photo & logo"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-zinc-300 hover:text-white border border-[#2a2a30] hover:border-[#ff5733]/40 rounded-xl bg-[#141418] transition-all duration-200"
+            >
+              <ImageIcon className="w-3.5 h-3.5 text-[#ff5733]" />
+              <span className="hidden xl:inline">Photo &amp; Logo</span>
+            </button>
+
             <button
               id="nav-cv-btn"
               onClick={onOpenCv}
@@ -174,28 +178,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
             ))}
           </div>
 
-          <div className="pt-2 border-t border-[#1e1e24] flex gap-2">
+          <div className="pt-2 border-t border-[#1e1e24] flex flex-col gap-2">
+            <div className="flex gap-2">
+              <button
+                id="mobile-drawer-cv-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenCv();
+                }}
+                className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-medium text-zinc-200 bg-[#15151a] border border-[#282830] rounded-lg"
+              >
+                <Download className="w-3.5 h-3.5 text-[#ff5733]" />
+                <span>View Resume</span>
+              </button>
+              <button
+                id="mobile-drawer-hire-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('#contact');
+                }}
+                className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
+              >
+                <span>Get in Touch</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
             <button
-              id="mobile-drawer-cv-btn"
+              id="mobile-drawer-media-btn"
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenCv();
+                openMediaModal();
               }}
-              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-medium text-zinc-200 bg-[#15151a] border border-[#282830] rounded-lg"
+              className="w-full inline-flex justify-center items-center gap-2 py-2 text-xs font-medium text-zinc-300 bg-[#15151a] border border-[#282830] rounded-lg hover:border-[#ff5733]/40"
             >
-              <Download className="w-3.5 h-3.5 text-[#ff5733]" />
-              <span>View Resume</span>
-            </button>
-            <button
-              id="mobile-drawer-hire-btn"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                handleNavClick('#contact');
-              }}
-              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
-            >
-              <span>Get in Touch</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ImageIcon className="w-3.5 h-3.5 text-[#ff5733]" />
+              <span>Upload Real Photo &amp; Logo</span>
             </button>
           </div>
         </div>

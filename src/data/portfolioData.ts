@@ -1,6 +1,6 @@
 import { Project, Service, Experience, Testimonial, SkillCategory } from '../types';
 
-import kaifPortrait from '../assets/images/kaif_portrait_1789027858024.jpg';
+import kaifPortrait from '../assets/images/kaif_portrait_new_1789105064684.jpg';
 import zaxflixImg from '../assets/images/zaxflix_preview_1789027877062.jpg';
 import ecommerceImg from '../assets/images/ecommerce_preview_1789027902254.jpg';
 import realestateImg from '../assets/images/realestate_preview_1789027917531.jpg';
@@ -55,13 +55,13 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'Elementor Pro & Theme Builder', level: 96, featured: true },
       { name: 'WooCommerce & Checkout UX', level: 94, featured: true },
       { name: 'Divi Builder', level: 88 },
-      { name: 'Astra & Hello Elementor', level: 95 }
+      { name: 'wp-ocean & Hello Elementor', level: 95 }
     ]
   },
   {
-    category: 'Dynamic CMS & Crocoblock',
+    category: 'Dynamic CMS ',
     skills: [
-      { name: 'Crocoblock JetEngine', level: 95, featured: true },
+      { name: 'JetEngine', level: 95, featured: true },
       { name: 'Advanced Custom Fields (ACF)', level: 96, featured: true },
       { name: 'Custom Post Types & Relations', level: 94 },
       { name: 'JetSmartFilters & Query Builder', level: 92 },

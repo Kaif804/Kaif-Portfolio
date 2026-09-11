@@ -1,6 +1,7 @@
-import React from 'react';
-import { ArrowRight, Download, CheckCircle2, Sparkles, MapPin, Code2, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Download, CheckCircle2, Sparkles, MapPin, Code2, Zap, Camera, Upload } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { useMedia } from '../context/MediaContext';
 
 interface HeroProps {
   onOpenCv: () => void;
@@ -8,6 +9,16 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
+  const { profilePhoto, setProfilePhotoFromFile, openMediaModal, isCustomPhoto } = useMedia();
+  const [isDragOver, setIsDragOver] = useState(false);
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragOver(false);
+    if (e.dataTransfer.files?.[0]) {
+      setProfilePhotoFromFile(e.dataTransfer.files[0]);
+    }
+  };
   return (
     <section
       id="home"
@@ -124,16 +135,45 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
             <div className="relative w-full max-w-sm sm:max-w-md aspect-[3/4] rounded-3xl p-2 bg-gradient-to-b from-[#25252e] via-[#16161b] to-[#0d0d10] border border-[#2d2d38] shadow-2xl shadow-black/80 group">
               
               {/* Profile Image container */}
-              <div className="w-full h-full rounded-2xl overflow-hidden relative bg-[#121215]">
+              <div
+                onDragOver={(e) => {
+                  e.preventDefault();
+                  setIsDragOver(true);
+                }}
+                onDragLeave={() => setIsDragOver(false)}
+                onDrop={handleDrop}
+                className={`w-full h-full rounded-2xl overflow-hidden relative bg-[#121215] transition-all ${
+                  isDragOver ? 'ring-4 ring-[#ff5733] ring-inset' : ''
+                }`}
+              >
                 <img
-                  src={PERSONAL_INFO.avatar}
+                  src={profilePhoto}
                   alt={PERSONAL_INFO.name}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-center filter contrast-105 group-hover:scale-102 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top filter contrast-105 group-hover:scale-102 transition-transform duration-700"
                 />
 
                 {/* Dark Vignette Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c10] via-transparent to-transparent opacity-85" />
+
+                {/* Quick Upload / Manage Trigger Button */}
+                <button
+                  onClick={openMediaModal}
+                  id="btn-customize-media"
+                  className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-black/70 hover:bg-[#ff5733] text-white text-xs font-medium backdrop-blur-md border border-white/10 shadow-lg flex items-center gap-1.5 transition-all opacity-80 hover:opacity-100 hover:scale-105"
+                  title="Upload or Change Real Photo & Logo"
+                >
+                  <Camera className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Upload Real Photo</span>
+                </button>
+
+                {/* Drag over overlay indicator */}
+                {isDragOver && (
+                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center text-white z-20">
+                    <Upload className="w-10 h-10 text-[#ff5733] animate-bounce" />
+                    <p className="font-semibold text-sm mt-2">Drop your photo here</p>
+                  </div>
+                )}
 
                 {/* In-Image Bottom Content */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#121216]/90 backdrop-blur-md border border-[#272733] shadow-lg">
