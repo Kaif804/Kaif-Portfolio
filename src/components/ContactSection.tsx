@@ -4,7 +4,6 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Linkedin, 
   Send, 
   CheckCircle, 
   MessageSquare, 
@@ -165,31 +164,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                       {PERSONAL_INFO.address}
                     </span>
                   </div>
-                </div>
-
-                {/* LinkedIn */}
-                <div className="p-4 rounded-xl bg-[#16161c] border border-[#262632] flex items-center justify-between group hover:border-[#ff5733]/40 transition-colors">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-lg bg-[#1a1a24] flex items-center justify-center text-[#ff5733]">
-                      <Linkedin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-[11px] text-zinc-400 block font-medium">LinkedIn Profile</span>
-                      <span className="text-sm font-semibold text-white">
-                        Kaif Qaiser
-                      </span>
-                    </div>
-                  </div>
-
-                  <a
-                    href={PERSONAL_INFO.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-zinc-200 bg-[#1e1e28] hover:bg-[#ff5733] hover:text-white rounded-lg transition-colors"
-                  >
-                    <span>Connect</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </a>
                 </div>
 
               </div>
