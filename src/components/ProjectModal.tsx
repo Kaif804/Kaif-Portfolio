@@ -26,7 +26,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Modal Header bar */}
         <div className="flex items-center justify-between p-5 sm:p-6 border-b border-[#202028] bg-[#14141a]">
           <div>
-            <span className="text-xs font-semibold text-[#ff6b35] uppercase tracking-wider">
+            <span className="text-xs font-semibold text-[#FF6A00] uppercase tracking-wider">
               {project.categoryLabel}
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-white mt-0.5">
@@ -36,7 +36,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-[#1c1c24] hover:bg-[#ff5733] text-zinc-400 hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-[#1c1c24] hover:bg-[#FF5500] text-zinc-400 hover:text-white transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -58,7 +58,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-[#ff5733] hover:bg-[#ff6b35] rounded-xl shadow-lg shadow-black/60 transition-colors"
+                className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#FF6A00] to-[#E61E00] hover:from-[#FF7A1A] hover:to-[#FF2600] rounded-xl shadow-lg shadow-black/60 transition-all"
               >
                 <span>Visit Live Website</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -101,7 +101,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {project.deliverables.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-2.5 text-xs text-zinc-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#ff5733] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#FF5500] shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -137,7 +137,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-[#ff5733] hover:bg-[#ff6b35] rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#FF6A00] to-[#E61E00] hover:from-[#FF7A1A] hover:to-[#FF2600] rounded-xl transition-all shadow-md shadow-[#FF5500]/20"
               >
                 <span>Open Live Project</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />

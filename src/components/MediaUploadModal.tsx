@@ -60,7 +60,7 @@ export const MediaUploadModal: React.FC = () => {
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-[#22222c]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#ff5733]/20 flex items-center justify-center text-[#ff5733]">
+            <div className="w-10 h-10 rounded-xl bg-[#FF5500]/20 flex items-center justify-center text-[#FF5500]">
               <ImageIcon className="w-5 h-5" />
             </div>
             <div>
@@ -138,8 +138,8 @@ export const MediaUploadModal: React.FC = () => {
                 onClick={() => photoInputRef.current?.click()}
                 className={`flex-1 w-full border-2 border-dashed rounded-xl p-5 flex flex-col items-center justify-center text-center cursor-pointer transition-colors ${
                   photoDragOver
-                    ? 'border-[#ff5733] bg-[#ff5733]/10'
-                    : 'border-[#2e2e3c] hover:border-[#ff5733]/60 hover:bg-[#20202a]'
+                    ? 'border-[#FF5500] bg-[#FF5500]/10'
+                    : 'border-[#2e2e3c] hover:border-[#FF5500]/60 hover:bg-[#20202a]'
                 }`}
               >
                 <input
@@ -153,7 +153,7 @@ export const MediaUploadModal: React.FC = () => {
                     }
                   }}
                 />
-                <Upload className="w-6 h-6 text-[#ff5733] mb-2" />
+                <Upload className="w-6 h-6 text-[#FF5500] mb-2" />
                 <p className="text-xs font-semibold text-white">
                   Click to select or drag &amp; drop your real photo
                 </p>
@@ -174,7 +174,7 @@ export const MediaUploadModal: React.FC = () => {
                     Custom File Active
                   </span>
                 ) : (
-                  <span className="px-2 py-0.5 text-[10px] font-bold bg-[#ff5733]/20 text-[#ff5733] border border-[#ff5733]/30 rounded-full">
+                  <span className="px-2 py-0.5 text-[10px] font-bold bg-[#FF5500]/20 text-[#FF5500] border border-[#FF5500]/30 rounded-full">
                     Vector Graphic Active
                   </span>
                 )}
@@ -219,8 +219,8 @@ export const MediaUploadModal: React.FC = () => {
                 onClick={() => logoInputRef.current?.click()}
                 className={`flex-1 w-full border-2 border-dashed rounded-xl p-5 flex flex-col items-center justify-center text-center cursor-pointer transition-colors ${
                   logoDragOver
-                    ? 'border-[#ff5733] bg-[#ff5733]/10'
-                    : 'border-[#2e2e3c] hover:border-[#ff5733]/60 hover:bg-[#20202a]'
+                    ? 'border-[#FF5500] bg-[#FF5500]/10'
+                    : 'border-[#2e2e3c] hover:border-[#FF5500]/60 hover:bg-[#20202a]'
                 }`}
               >
                 <input
@@ -234,7 +234,7 @@ export const MediaUploadModal: React.FC = () => {
                     }
                   }}
                 />
-                <Upload className="w-6 h-6 text-[#ff5733] mb-2" />
+                <Upload className="w-6 h-6 text-[#FF5500] mb-2" />
                 <p className="text-xs font-semibold text-white">
                   Click to select or drag &amp; drop your real logo
                 </p>
@@ -260,7 +260,7 @@ export const MediaUploadModal: React.FC = () => {
         <div className="mt-6 flex justify-end">
           <button
             onClick={closeMediaModal}
-            className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#ff5733] to-[#ff7e5f] text-white font-semibold text-sm hover:opacity-95 shadow-lg shadow-[#ff5733]/20 transition-opacity"
+            className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#FF5500] to-[#E61E00] text-white font-semibold text-sm hover:opacity-95 shadow-lg shadow-[#FF5500]/20 transition-opacity"
           >
             Done
           </button>

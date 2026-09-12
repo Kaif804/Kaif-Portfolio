@@ -40,7 +40,7 @@ export function App() {
 
   return (
     <MediaProvider>
-      <div className="min-h-screen bg-[#09090b] text-[#f4f4f5] flex flex-col relative selection:bg-[#ff5733]/30 selection:text-[#ff6b35]">
+      <div className="min-h-screen bg-[#09090b] text-[#f4f4f5] flex flex-col relative selection:bg-[#FF5500]/30 selection:text-[#FF6A00]">
         {/* Top Fixed Navbar */}
         <Navbar
           onOpenCv={() => setCvModalOpen(true)}

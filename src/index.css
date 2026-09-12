@@ -2,9 +2,10 @@
 
 @layer base {
   :root {
-    --accent: #ff5733;
-    --accent-hover: #ff6b35;
-    --accent-glow: rgba(255, 87, 51, 0.25);
+    --accent: #FF5500;
+    --accent-hover: #FF6A00;
+    --accent-dark: #E61E00;
+    --accent-glow: rgba(255, 85, 0, 0.3);
     --bg-dark: #09090b;
     --card-bg: #121215;
     --card-border: #222227;
@@ -34,5 +35,5 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff5733;
+  background: #FF5500;
 }

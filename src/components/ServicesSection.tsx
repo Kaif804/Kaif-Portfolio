@@ -26,15 +26,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
   const getServiceIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Code2': return <Code2 className="w-5 h-5 text-[#ff5733]" />;
-      case 'ShoppingBag': return <ShoppingBag className="w-5 h-5 text-[#ff5733]" />;
-      case 'Layout': return <Layout className="w-5 h-5 text-[#ff5733]" />;
-      case 'Layers': return <Layers className="w-5 h-5 text-[#ff5733]" />;
-      case 'Zap': return <Zap className="w-5 h-5 text-[#ff5733]" />;
-      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#ff5733]" />;
-      case 'Compass': return <Compass className="w-5 h-5 text-[#ff5733]" />;
-      case 'Wrench': return <Wrench className="w-5 h-5 text-[#ff5733]" />;
-      default: return <Code2 className="w-5 h-5 text-[#ff5733]" />;
+      case 'Code2': return <Code2 className="w-5 h-5 text-[#FF5500]" />;
+      case 'ShoppingBag': return <ShoppingBag className="w-5 h-5 text-[#FF5500]" />;
+      case 'Layout': return <Layout className="w-5 h-5 text-[#FF5500]" />;
+      case 'Layers': return <Layers className="w-5 h-5 text-[#FF5500]" />;
+      case 'Zap': return <Zap className="w-5 h-5 text-[#FF5500]" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#FF5500]" />;
+      case 'Compass': return <Compass className="w-5 h-5 text-[#FF5500]" />;
+      case 'Wrench': return <Wrench className="w-5 h-5 text-[#FF5500]" />;
+      default: return <Code2 className="w-5 h-5 text-[#FF5500]" />;
     }
   };
 
@@ -49,12 +49,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16161c] border border-[#272733] text-xs font-semibold text-[#ff6b35] uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16161c] border border-[#272733] text-xs font-semibold text-[#FF6A00] uppercase tracking-wider mb-3">
               <Layers className="w-3.5 h-3.5" />
               <span>Tailored Solutions</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              Specialized <span className="text-[#ff5733]">WordPress Services</span>
+              Specialized <span className="text-[#FF5500]">WordPress Services</span>
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base max-w-2xl mt-3 font-normal leading-relaxed">
               Comprehensive web development from dynamic ACF architectures to lightning-fast WooCommerce stores and security hardening.
@@ -67,7 +67,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               onClick={() => setViewMode('accordion')}
               className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 viewMode === 'accordion'
-                  ? 'bg-[#ff5733] text-white shadow-md'
+                  ? 'bg-gradient-to-r from-[#FF6A00] to-[#E61E00] text-white shadow-md shadow-[#FF5500]/25 font-semibold'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
@@ -78,7 +78,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               onClick={() => setViewMode('grid')}
               className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 viewMode === 'grid'
-                  ? 'bg-[#ff5733] text-white shadow-md'
+                  ? 'bg-gradient-to-r from-[#FF6A00] to-[#E61E00] text-white shadow-md shadow-[#FF5500]/25 font-semibold'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
@@ -99,7 +99,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   id={`service-accordion-${service.id}`}
                   className={`rounded-2xl transition-all duration-200 border ${
                     isExpanded
-                      ? 'bg-[#131318] border-[#ff5733]/50 shadow-xl shadow-[#ff5733]/5'
+                      ? 'bg-[#131318] border-[#FF5500]/50 shadow-xl shadow-[#FF5500]/5'
                       : 'bg-[#101014] border-[#202028] hover:border-[#2d2d38]'
                   }`}
                 >
@@ -116,7 +116,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                         <div className="flex items-center gap-2">
                           <span className="text-[11px] font-mono text-zinc-400">0{index + 1}</span>
                           <span className="text-zinc-600">•</span>
-                          <span className="text-xs text-[#ff6b35] font-medium hidden sm:inline">
+                          <span className="text-xs text-[#FF6A00] font-medium hidden sm:inline">
                             {service.techStack[0]}
                           </span>
                         </div>
@@ -129,7 +129,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     <div className="flex items-center gap-3 shrink-0">
                       <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
                         isExpanded
-                          ? 'bg-[#ff5733] text-white rotate-180'
+                          ? 'bg-[#FF5500] text-white rotate-180'
                           : 'bg-[#1a1a22] text-zinc-400 border border-[#282834]'
                       }`}>
                         <ChevronDown className="w-4 h-4" />
@@ -151,7 +151,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                           {service.deliverables.map((item, idx) => (
                             <div key={idx} className="flex items-start gap-2.5 text-xs text-zinc-300">
-                              <CheckCircle2 className="w-4 h-4 text-[#ff5733] shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-4 h-4 text-[#FF5500] shrink-0 mt-0.5" />
                               <span>{item}</span>
                             </div>
                           ))}
@@ -174,7 +174,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
                         <button
                           onClick={() => onSelectService(service.title)}
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-[#ff5733] hover:bg-[#ff6b35] transition-colors shadow-md shadow-[#ff5733]/20"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#FF6A00] to-[#E61E00] hover:from-[#FF7A1A] hover:to-[#FF2600] transition-all shadow-md shadow-[#FF5500]/25"
                         >
                           <span>Request Quote for {service.title}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -195,17 +195,17 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               <div
                 key={service.id}
                 id={`service-card-${service.id}`}
-                className="group p-6 rounded-2xl bg-[#111115] border border-[#22222a] hover:border-[#ff5733]/50 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-xl hover:shadow-[#ff5733]/5"
+                className="group p-6 rounded-2xl bg-[#111115] border border-[#22222a] hover:border-[#FF5500]/50 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-xl hover:shadow-[#FF5500]/5"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-xl bg-[#181820] group-hover:bg-[#ff5733]/15 flex items-center justify-center border border-[#262632] group-hover:border-[#ff5733]/30 transition-colors">
+                    <div className="w-11 h-11 rounded-xl bg-[#181820] group-hover:bg-[#FF5500]/15 flex items-center justify-center border border-[#262632] group-hover:border-[#FF5500]/30 transition-colors">
                       {getServiceIcon(service.iconName)}
                     </div>
                     <span className="text-xs font-mono text-zinc-400">0{index + 1}</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white tracking-tight mb-2 group-hover:text-[#ff6b35] transition-colors">
+                  <h3 className="text-base font-bold text-white tracking-tight mb-2 group-hover:text-[#FF6A00] transition-colors">
                     {service.title}
                   </h3>
 
@@ -216,7 +216,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   <div className="space-y-2 mb-6 pt-3 border-t border-[#1e1e26]">
                     {service.deliverables.slice(0, 3).map((item, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-[11px] text-zinc-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#ff5733] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                         <span className="line-clamp-1">{item}</span>
                       </div>
                     ))}
@@ -237,7 +237,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
                   <button
                     onClick={() => onSelectService(service.title)}
-                    className="p-2 rounded-lg bg-[#181820] hover:bg-[#ff5733] text-zinc-300 hover:text-white transition-colors"
+                    className="p-2 rounded-lg bg-[#181820] hover:bg-[#FF5500] text-zinc-300 hover:text-white transition-colors"
                     title={`Request Quote for ${service.title}`}
                   >
                     <ArrowRight className="w-3.5 h-3.5" />

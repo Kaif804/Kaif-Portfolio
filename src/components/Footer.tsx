@@ -39,21 +39,21 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#ff5733] hover:text-[#ff6b35] flex items-center justify-center text-zinc-300 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#FF5500] hover:text-[#FF6A00] flex items-center justify-center text-zinc-300 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#ff5733] hover:text-[#ff6b35] flex items-center justify-center text-zinc-300 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#FF5500] hover:text-[#FF6A00] flex items-center justify-center text-zinc-300 transition-colors"
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4" />
               </a>
               <a
                 href={`tel:${PERSONAL_INFO.phone}`}
-                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#ff5733] hover:text-[#ff6b35] flex items-center justify-center text-zinc-300 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#FF5500] hover:text-[#FF6A00] flex items-center justify-center text-zinc-300 transition-colors"
                 aria-label="Phone"
               >
                 <Phone className="w-4 h-4" />
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
                 href="https://zaxflix.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#ff5733] hover:text-[#ff6b35] flex items-center justify-center text-zinc-300 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#14141a] border border-[#242430] hover:border-[#FF5500] hover:text-[#FF6A00] flex items-center justify-center text-zinc-300 transition-colors"
                 aria-label="Zaxflix Live"
                 title="Zaxflix.com"
               >
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="hover:text-[#ff6b35] transition-colors inline-block py-1 text-zinc-400"
+                    className="hover:text-[#FF6A00] transition-colors inline-block py-1 text-zinc-400"
                   >
                     {link.label}
                   </a>
@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
           <button
             onClick={scrollToTop}
             id="back-to-top-btn"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#14141a] hover:bg-[#ff5733] border border-[#242430] hover:border-[#ff5733] text-zinc-300 hover:text-white transition-all duration-200 cursor-pointer text-xs"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#14141a] hover:bg-[#FF5500] border border-[#242430] hover:border-[#FF5500] text-zinc-300 hover:text-white transition-all duration-200 cursor-pointer text-xs"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

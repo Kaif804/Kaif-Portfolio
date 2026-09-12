@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
       {/* Background Decorative Mesh & Radial Glows */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Ambient Top Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[400px] bg-gradient-to-b from-[#ff5733]/15 via-[#ff5733]/5 to-transparent blur-[120px] rounded-full" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[400px] bg-gradient-to-b from-[#FF5500]/15 via-[#FF5500]/5 to-transparent blur-[120px] rounded-full" />
         
         {/* Subtle grid pattern */}
         <div 
@@ -30,8 +30,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
         />
 
         {/* Ambient side accents */}
-        <div className="absolute top-1/3 -left-32 w-72 h-72 bg-[#ff5733]/10 blur-[100px] rounded-full" />
-        <div className="absolute bottom-10 -right-32 w-80 h-80 bg-[#ff6b35]/10 blur-[110px] rounded-full" />
+        <div className="absolute top-1/3 -left-32 w-72 h-72 bg-[#FF5500]/10 blur-[100px] rounded-full" />
+        <div className="absolute bottom-10 -right-32 w-80 h-80 bg-[#FF6A00]/10 blur-[110px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
               </span>
               <span>Available for Freelance & Full-time</span>
               <span className="text-zinc-600">|</span>
-              <span className="text-[#ff6b35] font-semibold flex items-center gap-1">
+              <span className="text-[#FF6A00] font-semibold flex items-center gap-1">
                 <MapPin className="w-3 h-3 inline" /> Lahore, PK
               </span>
             </div>
@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
               WordPress Developer Who Builds{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff5733] via-[#ff7a59] to-[#ff9a3d]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF7A1A] via-[#FF5500] to-[#E61E00]">
                 Fast, Beautiful & Scalable
               </span>{' '}
               Websites
@@ -65,18 +65,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
             {/* Sub-headline */}
             <p className="text-base sm:text-lg text-zinc-400 max-w-2xl font-normal leading-relaxed">
               <strong className="text-zinc-200 font-semibold">3 Years of Professional Experience</strong>
-              <span className="mx-2 text-[#ff5733]">✦</span>
+              <span className="mx-2 text-[#FF5500]">✦</span>
               <span>Elementor Pro</span>
-              <span className="mx-2 text-[#ff5733]">✦</span>
+              <span className="mx-2 text-[#FF5500]">✦</span>
               <span>WooCommerce</span>
-              <span className="mx-2 text-[#ff5733]">✦</span>
+              <span className="mx-2 text-[#FF5500]">✦</span>
               <span>JetEngine</span>
-              <span className="mx-2 text-[#ff5733]">✦</span>
+              <span className="mx-2 text-[#FF5500]">✦</span>
               <span>ACF</span>
             </p>
 
             {/* Concise Bio snippet */}
-            <p className="text-xs sm:text-sm text-zinc-400/90 max-w-xl leading-relaxed border-l-2 border-[#ff5733]/60 pl-3.5 py-0.5">
+            <p className="text-xs sm:text-sm text-zinc-400/90 max-w-xl leading-relaxed border-l-2 border-[#FF5500]/60 pl-3.5 py-0.5">
               Transforming design visions and complex business models into responsive, clean-coded WordPress experiences with sub-second page loads and custom dynamic integrations.
             </p>
 
@@ -85,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
               <button
                 id="hero-view-portfolio-btn"
                 onClick={onOpenPortfolio}
-                className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 text-sm font-semibold text-white bg-[#ff5733] hover:bg-[#ff6b35] rounded-xl shadow-xl shadow-[#ff5733]/25 hover:shadow-[#ff5733]/40 transition-all duration-200 w-full sm:w-auto cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-[#FF6A00] to-[#E61E00] hover:from-[#FF7A1A] hover:to-[#FF2600] rounded-xl shadow-xl shadow-[#FF5500]/30 hover:shadow-[#FF5500]/50 transition-all duration-200 w-full sm:w-auto cursor-pointer"
               >
                 <span>View Portfolio</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -94,9 +94,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
               <button
                 id="hero-download-cv-btn"
                 onClick={onOpenCv}
-                className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 text-sm font-medium text-zinc-200 hover:text-white bg-[#141418] hover:bg-[#1c1c24] border border-[#2b2b35] hover:border-[#ff5733]/50 rounded-xl transition-all duration-200 w-full sm:w-auto cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 text-sm font-medium text-zinc-200 hover:text-white bg-[#141418] hover:bg-[#1c1c24] border border-[#2b2b35] hover:border-[#FF5500]/50 rounded-xl transition-all duration-200 w-full sm:w-auto cursor-pointer"
               >
-                <Download className="w-4 h-4 text-[#ff5733] group-hover:scale-110 transition-transform" />
+                <Download className="w-4 h-4 text-[#FF5500] group-hover:scale-110 transition-transform" />
                 <span>Download CV</span>
               </button>
             </div>
@@ -104,15 +104,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
             {/* Micro Highlights Pill Row */}
             <div className="pt-3 flex flex-wrap gap-4 text-xs text-zinc-400">
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#ff5733]" />
+                <CheckCircle2 className="w-4 h-4 text-[#FF5500]" />
                 <span>Clean Code & No Bloat</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#ff5733]" />
+                <CheckCircle2 className="w-4 h-4 text-[#FF5500]" />
                 <span>Google Core Web Vitals 90+</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#ff5733]" />
+                <CheckCircle2 className="w-4 h-4 text-[#FF5500]" />
                 <span>Payment Gateways & APIs</span>
               </div>
             </div>
@@ -144,7 +144,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
                       <p className="text-sm font-bold text-white tracking-wide">Kaif Qaiser</p>
                       <p className="text-xs text-zinc-400">Professional WP Architect</p>
                     </div>
-                    <span className="px-2.5 py-1 text-[11px] font-semibold text-[#ff5733] bg-[#ff5733]/15 border border-[#ff5733]/30 rounded-lg">
+                    <span className="px-2.5 py-1 text-[11px] font-semibold text-[#FF5500] bg-[#FF5500]/15 border border-[#FF5500]/30 rounded-lg">
                       3+ Yrs Exp
                     </span>
                   </div>
@@ -153,7 +153,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
 
               {/* Floating Badge 1: Top Left - Speed & Performance */}
               <div className="absolute -top-4 -left-4 sm:-left-6 px-3.5 py-2 rounded-xl bg-[#141419]/95 border border-[#2c2c36] shadow-xl backdrop-blur-md flex items-center gap-2.5 animate-bounce [animation-duration:4s]">
-                <div className="w-7 h-7 rounded-lg bg-[#ff5733]/20 flex items-center justify-center text-[#ff5733]">
+                <div className="w-7 h-7 rounded-lg bg-[#FF5500]/20 flex items-center justify-center text-[#FF5500]">
                   <Zap className="w-4 h-4 fill-current" />
                 </div>
                 <div>
@@ -164,7 +164,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv, onOpenPortfolio }) => {
 
               {/* Floating Badge 2: Bottom Right - JetEngine & ACF */}
               <div className="absolute -bottom-4 -right-4 sm:-right-6 px-3.5 py-2 rounded-xl bg-[#141419]/95 border border-[#2c2c36] shadow-xl backdrop-blur-md flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#ff5733]/20 flex items-center justify-center text-[#ff5733]">
+                <div className="w-7 h-7 rounded-lg bg-[#FF5500]/20 flex items-center justify-center text-[#FF5500]">
                   <Code2 className="w-4 h-4" />
                 </div>
                 <div>

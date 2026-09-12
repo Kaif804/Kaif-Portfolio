@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
                   onClick={() => handleNavClick(link.href)}
                   className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'bg-[#ff5733] text-white shadow-md shadow-[#ff5733]/20 font-semibold'
+                      ? 'bg-gradient-to-r from-[#FF6A00] to-[#E61E00] text-white shadow-md shadow-[#FF5500]/30 font-semibold'
                       : 'text-zinc-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -105,9 +105,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
             <button
               id="nav-cv-btn"
               onClick={onOpenCv}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-zinc-300 hover:text-white border border-[#2a2a30] hover:border-[#ff5733]/40 rounded-xl bg-[#141418] transition-all duration-200"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-zinc-300 hover:text-white border border-[#2a2a30] hover:border-[#FF5500]/40 rounded-xl bg-[#141418] transition-all duration-200"
             >
-              <Download className="w-3.5 h-3.5 text-[#ff5733]" />
+              <Download className="w-3.5 h-3.5 text-[#FF5500]" />
               <span>CV</span>
             </button>
 
@@ -117,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
                 onOpenContact();
                 handleNavClick('#contact');
               }}
-              className="relative group inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold text-white bg-[#ff5733] hover:bg-[#ff6b35] rounded-xl shadow-lg shadow-[#ff5733]/25 hover:shadow-[#ff5733]/40 transition-all duration-200"
+              className="relative group inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#FF6A00] to-[#E61E00] hover:from-[#FF7A1A] hover:to-[#FF2600] rounded-xl shadow-lg shadow-[#FF5500]/25 hover:shadow-[#FF5500]/45 transition-all duration-200"
             >
               <span>Hire Me</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
             <button
               id="mobile-hire-me-btn"
               onClick={() => handleNavClick('#contact')}
-              className="px-3 py-1.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
+              className="px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-[#FF6A00] to-[#E61E00] rounded-lg shadow-sm"
             >
               Hire Me
             </button>
@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
                 onClick={() => handleNavClick(link.href)}
                 className={`text-left px-3 py-2 text-sm rounded-lg transition-colors ${
                   activeSection === link.href.replace('#', '')
-                    ? 'bg-[#ff5733]/15 text-[#ff6b35] font-semibold border border-[#ff5733]/30'
+                    ? 'bg-[#FF5500]/15 text-[#FF6A00] font-semibold border border-[#FF5500]/30'
                     : 'text-zinc-300 hover:bg-[#141418]'
                 }`}
               >
@@ -177,7 +177,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
               }}
               className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-medium text-zinc-200 bg-[#15151a] border border-[#282830] rounded-lg"
             >
-              <Download className="w-3.5 h-3.5 text-[#ff5733]" />
+              <Download className="w-3.5 h-3.5 text-[#FF5500]" />
               <span>View Resume</span>
             </button>
             <button
@@ -186,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv, onOpenContact }) => {
                 setMobileMenuOpen(false);
                 handleNavClick('#contact');
               }}
-              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-semibold text-white bg-[#ff5733] rounded-lg"
+              className="flex-1 inline-flex justify-center items-center gap-2 py-2.5 text-xs font-semibold text-white bg-[#FF5500] rounded-lg"
             >
               <span>Get in Touch</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

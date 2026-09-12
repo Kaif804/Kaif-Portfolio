@@ -27,12 +27,12 @@ export const PortfolioSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16161c] border border-[#272733] text-xs font-semibold text-[#ff6b35] uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16161c] border border-[#272733] text-xs font-semibold text-[#FF6A00] uppercase tracking-wider mb-3">
               <LayoutGrid className="w-3.5 h-3.5" />
               <span>Selected Work</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              Featured <span className="text-[#ff5733]">Portfolio</span>
+              Featured <span className="text-[#FF5500]">Portfolio</span>
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base max-w-2xl mt-3 font-normal leading-relaxed">
               Real-world client solutions demonstrating high-performance architectures, complex WooCommerce configurations, and custom JetEngine data structures.
@@ -47,7 +47,7 @@ export const PortfolioSection: React.FC = () => {
                 onClick={() => setActiveFilter(f.key as any)}
                 className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                   activeFilter === f.key
-                    ? 'bg-[#ff5733] text-white shadow-md shadow-[#ff5733]/20 font-semibold'
+                    ? 'bg-gradient-to-r from-[#FF6A00] to-[#E61E00] text-white shadow-md shadow-[#FF5500]/25 font-semibold'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -63,7 +63,7 @@ export const PortfolioSection: React.FC = () => {
             <div
               key={project.id}
               id={`portfolio-card-${project.id}`}
-              className="group relative rounded-2xl bg-[#121216] border border-[#22222a] hover:border-[#ff5733]/50 overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl hover:shadow-2xl hover:shadow-[#ff5733]/10"
+              className="group relative rounded-2xl bg-[#121216] border border-[#22222a] hover:border-[#FF5500]/50 overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl hover:shadow-2xl hover:shadow-[#FF5500]/10"
             >
               {/* Thumbnail Container with Hover Overlay */}
               <div className="relative aspect-[16/10] overflow-hidden bg-[#0a0a0d]">
@@ -83,7 +83,7 @@ export const PortfolioSection: React.FC = () => {
                     {project.categoryLabel}
                   </span>
                   {project.id === 'zaxflix' && (
-                    <span className="px-2 py-0.5 text-[10px] font-bold bg-[#ff5733] text-white rounded-md flex items-center gap-1 shadow-sm">
+                    <span className="px-2 py-0.5 text-[10px] font-bold bg-[#FF5500] text-white rounded-md flex items-center gap-1 shadow-sm">
                       <Sparkles className="w-2.5 h-2.5" /> Live URL
                     </span>
                   )}
@@ -101,7 +101,7 @@ export const PortfolioSection: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-[#ff5733] hover:bg-[#ff6b35] transition-colors shadow-lg cursor-pointer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#FF6A00] to-[#E61E00] hover:from-[#FF7A1A] hover:to-[#FF2600] shadow-md shadow-[#FF5500]/25 transition-all cursor-pointer"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>View Details</span>
@@ -127,7 +127,7 @@ export const PortfolioSection: React.FC = () => {
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#ff6b35] transition-colors">
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#FF6A00] transition-colors">
                       {project.title}
                     </h3>
                     {project.liveUrl && (
@@ -135,7 +135,7 @@ export const PortfolioSection: React.FC = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-500 hover:text-[#ff5733] transition-colors"
+                        className="text-zinc-500 hover:text-[#FF5500] transition-colors"
                         title="Visit external site"
                       >
                         <ExternalLink className="w-4 h-4" />
@@ -167,7 +167,7 @@ export const PortfolioSection: React.FC = () => {
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-zinc-200 bg-[#181820] group-hover:bg-[#ff5733] group-hover:text-white transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-zinc-200 bg-[#181820] group-hover:bg-[#FF5500] group-hover:text-white transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>View Project</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

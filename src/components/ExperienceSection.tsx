@@ -9,12 +9,12 @@ export const ExperienceSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="flex flex-col items-start mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16161c] border border-[#272733] text-xs font-semibold text-[#ff6b35] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16161c] border border-[#272733] text-xs font-semibold text-[#FF6A00] uppercase tracking-wider mb-3">
             <Briefcase className="w-3.5 h-3.5" />
             <span>Career Journey</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Work Experience <span className="text-[#ff5733]">Timeline</span>
+            Work Experience <span className="text-[#FF5500]">Timeline</span>
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-3xl mt-3 font-normal leading-relaxed">
             A proven track record of engineering scalable WordPress architectures, dynamic JetEngine query structures, and high-revenue WooCommerce environments.
@@ -32,7 +32,7 @@ export const ExperienceSection: React.FC = () => {
               {/* Timeline Pin Indicator */}
               <div className={`absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-125 ${
                 exp.current
-                  ? 'border-[#ff5733] bg-[#ff5733] shadow-lg shadow-[#ff5733]/40'
+                  ? 'border-[#FF5500] bg-[#FF5500] shadow-lg shadow-[#FF5500]/40'
                   : 'border-[#3a3a46] bg-[#141419]'
               }`}>
                 {exp.current ? (
@@ -43,17 +43,17 @@ export const ExperienceSection: React.FC = () => {
               </div>
 
               {/* Experience Card */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-[#111115] border border-[#22222a] group-hover:border-[#ff5733]/40 transition-all duration-300 shadow-xl space-y-5">
+              <div className="p-6 sm:p-8 rounded-2xl bg-[#111115] border border-[#22222a] group-hover:border-[#FF5500]/40 transition-all duration-300 shadow-xl space-y-5">
                 
                 {/* Header: Role, Company, Period */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#1e1e26]">
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#ff6b35] transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#FF6A00] transition-colors">
                         {exp.role}
                       </h3>
                       {exp.current && (
-                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#ff5733]/20 text-[#ff6b35] border border-[#ff5733]/40">
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FF5500]/20 text-[#FF6A00] border border-[#FF5500]/40">
                           Current Role
                         </span>
                       )}
@@ -61,7 +61,7 @@ export const ExperienceSection: React.FC = () => {
 
                     <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-400 mt-1">
                       <span className="font-semibold text-zinc-200 flex items-center gap-1.5">
-                        <Building className="w-3.5 h-3.5 text-[#ff5733]" />
+                        <Building className="w-3.5 h-3.5 text-[#FF5500]" />
                         {exp.company}
                       </span>
                       <span>•</span>
@@ -73,7 +73,7 @@ export const ExperienceSection: React.FC = () => {
                   </div>
 
                   <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#17171f] border border-[#272733] text-xs font-mono font-medium text-zinc-300 self-start sm:self-auto">
-                    <Calendar className="w-3.5 h-3.5 text-[#ff5733]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#FF5500]" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ export const ExperienceSection: React.FC = () => {
                 <div className="space-y-2.5">
                   {exp.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-zinc-300">
-                      <CheckCircle2 className="w-4 h-4 text-[#ff5733] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#FF5500] shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{highlight}</span>
                     </div>
                   ))}
